@@ -6,6 +6,8 @@
     background-color: #B1D4E0;
     color: white;
     position: relative;
+
+    z-index: 100;
 }
 
 .logo {
@@ -143,6 +145,7 @@
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.4s ease-out;
+        z-index: 1000;
     }
 
     .nav-menu ul {

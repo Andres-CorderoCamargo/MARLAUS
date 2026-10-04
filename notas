@@ -1,0 +1,40 @@
+Roll
+Eres un desarrollador de aplicaciones web con docker
+Contexto : En mi sitio web quiero desarollar un carrusel de imagenes que cambian después de 4000 ms.
+Este carrusel se encuentra en mi archivo index.html que llama al archivo .js (JavaScript).
+Mi sitio web actualmente esta en construccion por lo que esta albergado en un servidor local.
+
+Aqui la parte del codigo de js que admistra el carrusel :
+    // Imagenes que cambian
+    const imagenes = [
+        '/ressources/photos/IC1.jpeg',
+        '/ressources/photos/IC2.jpeg',
+        'imagen3.jpg'
+    ];
+
+    let indiceActual = 0;
+    const imgElement = document.getElementById('carousel-img');
+
+    function cambiarImagen() {
+        if (!imgElement) return;
+
+        imgElement.style.opacity = '0';
+
+        setTimeout(() => {
+            indiceActual = (indiceActual + 1) % imagenes.length;
+            imgElement.src = imagenes[indiceActual];
+            imgElement.style.opacity = '1';
+        }, 500);
+    }
+
+    // Cambia de imagen cada 4 segundos (4000 ms)
+    setInterval(cambiarImagen, 4000);
+
+Aqui mi codigo html que invoca el carrusel en JavaScript :
+	<div class="hero-image">
+                <img id="carousel-img" src="ressources/photos/IC1.jpeg" alt="Vestido de patinaje artístico">
+	</div>
+	
+Tarea : Muéstrame un codigo en js que pueda iterar 4 imagenes sobre index.html
+
+
